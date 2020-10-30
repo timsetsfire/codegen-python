@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.datarobot</groupId>
+   <artifactId>py4j-scoring</artifactId>
+   <packaging>jar</packaging>
+   <version>0.1.0</version>
+ 
+   <dependencies>
+     <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>4.4</version>
+         <scope>test</scope>
+     </dependency>
+
+<!-- mvn install:install-file -Dfile=agent-5.3.0.jar -DartifactId=agent -DgroupId=com.datarobot -Dversion=5.3.0 -Dpackaging=jar -->
+
+     <!-- mvn install:install-file -Dfile=agent-5.3.0.jar -DartifactId=agent -DgroupId=com.datarobot -Dversion=5.3.0 -Dpackaging=jar -->
+     <!-- mvn install:install-file -Dfile=datarobot-mlops-5.3.0.jar -DartifactId=datarobot-mlops -DgroupId=com.datarobot -Dversion=5.3.0 -Dpackaging=jar -->
+     <!-- mvn install:install-file -Dfile=5d5da72a3fa59e2850f824fc.jar -DartifactId=5d5da72a3fa59e2850f824fc -DgroupId=com.datarobot -Dversion=1.0.0 -Dpackaging=jar -->
+     <dependency>
+        <groupId>net.sf.py4j</groupId>
+        <artifactId>py4j</artifactId>
+        <version>0.10.9</version>
+     </dependency>
+   </dependencies>
+   <properties>
+      <maven.compiler.source>1.8</maven.compiler.source>
+      <maven.compiler.target>1.8</maven.compiler.target>
+   </properties>
+   <build>
+   <plugins>
+       <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>Main</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+     <plugin>
+       <artifactId>maven-assembly-plugin</artifactId>
+       <version>3.2.0</version>
+       <configuration>
+         <archive>
+         <manifest>
+            <mainClass>
+              Main
+            </mainClass>
+          </manifest>
+        </archive>
+         <descriptorRefs>
+           <descriptorRef>jar-with-dependencies</descriptorRef>
+         </descriptorRefs>
+       </configuration>
+       <executions>
+         <execution>
+           <id>make-assembly</id> <!-- this is used for inheritance merges -->
+           <phase>package</phase> <!-- bind to the packaging phase -->
+           <goals>
+             <goal>single</goal>
+           </goals>
+         </execution>
+       </executions>
+     </plugin>
+   </plugins>
+ </build>
+</project>
