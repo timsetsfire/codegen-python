@@ -1,3 +1,5 @@
+package com.github.timsetsfire.gateway;
+
 import py4j.GatewayServer;
 import java.net.InetAddress;
 

@@ -13,7 +13,11 @@
          <version>4.4</version>
          <scope>test</scope>
      </dependency>
-
+    <!-- <dependency>
+    <groupId>com.datarobot</groupId>
+    <artifactId>datarobot-prediction</artifactId>
+    <version>2.1.6</version>
+</dependency> -->
 <!-- mvn install:install-file -Dfile=agent-5.3.0.jar -DartifactId=agent -DgroupId=com.datarobot -Dversion=5.3.0 -Dpackaging=jar -->
 
      <!-- mvn install:install-file -Dfile=agent-5.3.0.jar -DartifactId=agent -DgroupId=com.datarobot -Dversion=5.3.0 -Dpackaging=jar -->

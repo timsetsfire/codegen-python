@@ -35,8 +35,8 @@ class CodegenPredictor(object):
         self._python_port = str(find_free_port())
 
         cmd = ["java", 
-               "-cp", self.model_jar,
-               "-jar", self.java_server,
+               "-cp", ":".join([self.model_jar, self.java_server]),
+               "com.github.timsetsfire.gateway.Main",
                self._java_port, self._python_port, str(connect_timeout), str(read_timeout)]
 
         self.logger.info("java gateway - {}".format(" ".join(cmd)))
