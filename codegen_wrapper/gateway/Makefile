@@ -1,9 +1,6 @@
 .PHONY: gateway
 
 build: gateway
-	mvn clean package
-	cp ./target/py4j-scoring*with-dependencies.jar ../datarobot
-	mvn clean
-
-# clean:
-# 	rm -rf *.jar
+	sbt clean assembly
+	cp ./target/scala-2.12/py4j-scoring*.jar ../datarobot
+	sbt clean
