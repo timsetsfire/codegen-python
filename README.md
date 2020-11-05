@@ -31,6 +31,7 @@ pip3 install -U ./codegen_wrapper/dist/datarobot_codegen_wrapper*.whl
 ```
 from datarobot.codegen_wrapper import CodegenPredictor
 cp = CodegenPredictor(model_id, path_to_codegen_jar)
+cp.load_model()
 cp.score(df) # df is some pandas dataframe or list of dicts.  
 ```
 
