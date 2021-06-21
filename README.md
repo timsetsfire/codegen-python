@@ -36,4 +36,11 @@ cp.score(df) # df is some pandas dataframe or list of dicts.
 cp.terminate_gateway()
 ```
 
+If you get the following exception 
+```
+Py4JNetworkError: An error occurred while trying to connect to the Java server
+```
+
+Try again.  You may have requested a prediction before the gateway was ready.  
+
 
