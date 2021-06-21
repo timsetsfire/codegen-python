@@ -66,8 +66,7 @@ object CodegenGateway {
     val connectTimeout = args(2).toInt
     val readTimeout = args(3).toInt;
     val modelId = args(4)
-    // val model: IPredictorInfo = Predictors.getPredictor(modelId)
-
+ 
     GatewayServer.turnAllLoggingOn();
 
     val server: GatewayServer = new GatewayServer(
