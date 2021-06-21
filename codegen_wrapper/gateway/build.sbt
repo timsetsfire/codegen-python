@@ -3,7 +3,7 @@ name := "py4j-scoring"
 
 libraryDependencies  ++= Seq(
     "com.opencsv" % "opencsv" % "5.3",
-    "net.sf.py4j" % "py4j" % "0.10.9",
+    "net.sf.py4j" % "py4j" % "0.10.7",
      "com.datarobot" % "datarobot-prediction" % "2.1.6" % "provided"
 )
 

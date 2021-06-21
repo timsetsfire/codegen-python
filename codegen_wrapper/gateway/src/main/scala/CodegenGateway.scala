@@ -36,7 +36,7 @@ class CodegenGateway(val modelId: String) {
     records.map { record =>
       isRegression match {
         case true =>
-          Array(model.asInstanceOf[IClassificationPredictor].score(record))
+          Array(model.asInstanceOf[IRegressionPredictor].score(record))
         case false =>
           val score = model.asInstanceOf[IClassificationPredictor].score(record)
           headers.map{ h => score.get(h)}

@@ -53,10 +53,10 @@ class CodegenPredictor(object):
                     )
         
         self.gateway_params = GatewayParameters(port=self._java_port)
-        self.logger.info("starting gateway")
+        self.logger.info("starting gateway localhost:{}".format(self._java_port))
         self.gateway = JavaGateway(python_proxy_port = self._python_port,gateway_parameters=gateway_params)
         time.sleep(1)
-        self.logger.info("gateway started")
+        self.logger.info("gateway started localhost:{}".format(self._java_port))
         self.gateway_open = True
 
     def load_model(self):
