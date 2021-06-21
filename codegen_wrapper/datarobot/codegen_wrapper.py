@@ -79,37 +79,6 @@ class CodegenPredictor(object):
             preds = self.entry_point.score(data)
         return pd.read_csv(StringIO(preds))
 
-        
-    # def score(self, row):
-    #     if not self.gateway_open:
-    #         self.java_gateway_init(self.model_id, self.connect_timeout, self.read_timeout)
-    #         self.gateway_open = True
-    #     if not self.model_loaded:
-    #         self.load_model()
-    #     record = dict_to_hashmap(row, self.gateway)
-    #     score = self.model.score(record)
-    #     return score
-
-    # def scoreRows1(self, rows):
-    #     if not self.gateway_open:
-    #         self.java_gateway_init(self.model_id, self.connect_timeout, self.read_timeout)
-    #         self.gateway_open = True
-    #     if not self.model_loaded:
-    #         self.load_model()
-    #     records = [dict_to_hashmap(r, self.gateway) for r in rows]
-    #     preds = [self.model.score(record) for record in records]
-    #     return preds
-    
-    # def scoreRows2(self, rows):
-    #     if not self.gateway_open:
-    #         self.java_gateway_init(self.model_id, self.connect_timeout, self.read_timeout)
-    #         self.gateway_open = True
-    #     if not self.model_loaded:
-    #         self.load_model()
-    #     records = pd.DataFrame(rows).to_csv(index=False)
-    #     preds = self.entry_point.sc(records)
-    #     return pd.read_csv(StringIO(preds)).to_dict(orient="records")
-
     def terminate_gateway(self):
         try:
             self.gateway.shutdown()
@@ -128,5 +97,3 @@ def dict_to_hashmap(r, gateway):
     h = gateway.jvm.java.util.HashMap()
     [h.put(k,v) for (k,v) in r.items()]
     return h
-
-# java -jar ./target/scala-2.12/py4j-scoring-assembly-0.1.0-SNAPSHOT.jar 1234 1235
