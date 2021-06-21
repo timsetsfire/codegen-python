@@ -1,5 +1,7 @@
 # DataRobot Codegen Python Wrapper
 
+__NOT OFFICIALLY SUPPORTED__
+
 Simple wrapper to leverage DataRobot Codegen Models in Python
 
 # Requirements
