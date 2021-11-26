@@ -4,7 +4,8 @@ name := "py4j-scoring"
 libraryDependencies  ++= Seq(
     "com.opencsv" % "opencsv" % "5.3",
     "net.sf.py4j" % "py4j" % "0.10.7",
-     "com.datarobot" % "datarobot-prediction" % "2.1.6" % "provided"
+     "com.datarobot" % "datarobot-prediction" % "2.1.6" % "provided",
+     "org.apache.commons" % "commons-csv" % "1.9.0"
 )
 
 // export gateway=/Users/timothy.whittaker/Desktop/sbt-projects/CodegenGateway/target/scala-2.12/codegengateway-assembly-0.1.0-SNAPSHOT.jar
