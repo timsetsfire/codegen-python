@@ -8,6 +8,7 @@ import time
 import numpy as np
 import pandas as pd
 from io import StringIO
+import tempfile
 
 import socket
 from contextlib import closing
@@ -30,7 +31,9 @@ class CodegenPredictor(object):
         self.gateway_open = False
         self.model_loaded = False
         self.jar_files = glob.glob(os.path.join(os.path.dirname(__file__), "*.jar"))
-        self.jar_files.append(self.path_to_codegen)
+        # self.jar_files.append(self.path_to_codegen)
+        with open(self.path_to_codegen, "rb") as f:
+            self.jar_bytes = f.read()
         self.java_server = [m for m in self.jar_files if "py4j-scoring" in m].pop()
         self.logger.info("{}".format(self.jar_files))       
         self.model = None
@@ -60,6 +63,9 @@ class CodegenPredictor(object):
         self.gateway_open = True
 
     def load_model(self):
+        tmp = tempfile.NamedTemporaryFile(suffix=".jar", mode="wb")
+        tmp.write(self.jar_bytes)
+        self.jar_files.append(tmp.name)
         if not self.gateway_open:
             self.java_gateway_init(self.model_id, self.connect_timeout, self.read_timeout)
             self.gateway_open = True
@@ -68,6 +74,7 @@ class CodegenPredictor(object):
         ## TODO get features
         # self.features = list(self.model.getFeatures().keySet())
         self.model_loaded = True
+        tmp.close()
 
     def score(self, data):
         if type(data) is pd.DataFrame:
