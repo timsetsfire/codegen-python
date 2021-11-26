@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 from io import StringIO
 import tempfile
+import pickle
 
 import socket
 from contextlib import closing
@@ -95,6 +96,14 @@ class CodegenPredictor(object):
         self.jgateway.terminate()
         self.gateway_open = False
         self.logger.info(self.jgateway.stdout.readlines())
+
+    def pickle(self, path):
+        self.gateway = None
+        self.jgateway = None
+        self.entry_point = None
+        self.model = None
+        with open(path, "wb") as f:
+            pickle.dump(self, f)
 
 def find_free_port():
     with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as s:
