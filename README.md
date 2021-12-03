@@ -2,7 +2,11 @@
 
 __NOT OFFICIALLY SUPPORTED__
 
-Simple wrapper to leverage DataRobot Codegen Models in Python
+Simple wrapper to leverage DataRobot Codegen Models in Python.  This works for the following codegen exports
+* Regression
+* Classificaiton
+* Time Series Regression Forecasting
+
 
 # Requirements
 
