@@ -96,12 +96,13 @@ class CodegenPredictor(object):
         self.jgateway.terminate()
         self.gateway_open = False
         self.logger.info(self.jgateway.stdout.readlines())
-
-    def pickle(self, path):
         self.gateway = None
         self.jgateway = None
         self.entry_point = None
         self.model = None
+
+    def pickle(self, path):
+        self.terminate_gateway()
         with open(path, "wb") as f:
             pickle.dump(self, f)
 

@@ -5,7 +5,7 @@ with open("../README.md", "r") as fh:
 
 setuptools.setup(
     name="datarobot-codegen-wrapper", # Replace with your own username
-    version="0.1.0",
+    version="0.3.0",
     author="tim whittaker",
     author_email="timothy.whittaker@datarobot.com",
     description="python wrapper for datarobot codegen models",
