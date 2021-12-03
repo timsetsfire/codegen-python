@@ -1,6 +1,8 @@
 
 name := "py4j-scoring"
 
+ThisBuild / version := "0.3.0"
+
 libraryDependencies  ++= Seq(
     "com.opencsv" % "opencsv" % "5.3",
     "net.sf.py4j" % "py4j" % "0.10.7",
