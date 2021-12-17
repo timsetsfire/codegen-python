@@ -14,10 +14,15 @@ Simple wrapper to leverage DataRobot Codegen Models in Python.  This works for t
 * python >= 3.7
 * valid datarobot codegen jar
 
-You can run 
+To create the whl, run `setup.py`
 ```
-python3 ./codegen_wrapper/setup.py bdist_wheel 
-pip3 install -U ./codegen_wrapper/dist/datarobot_codegen_wrapper*.whl
+cd codegen_wrapper
+python3 ./setup.py bdist_wheel 
+```
+
+After you have the whl, install with pip:
+```
+pip3 install -U dist/datarobot_codegen_wrapper*.whl
 ```
 
 If you would like to build locally, you will need
