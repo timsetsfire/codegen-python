@@ -16,7 +16,7 @@ Simple wrapper to leverage DataRobot Codegen Models in Python.  This works for t
 
 You can run 
 ```
-python3 ./codegen_wrapper/setup.py bdist wheel 
+python3 ./codegen_wrapper/setup.py bdist_wheel 
 pip3 install -U ./codegen_wrapper/dist/datarobot_codegen_wrapper*.whl
 ```
 
