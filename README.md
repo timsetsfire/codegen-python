@@ -1,3 +1,9 @@
+# CHECK OUT [DATAROBOT-PREDICT](https://pypi.org/project/datarobot-predict/)
+
+this rinky dink repo has inspired DataRobot to deliver DataRobot Prediction Library is a Python library for making predictions using various prediction methods supported by DataRobot. The intention is to provide a common interface for making predictions, making it easy to swap out the underlying implementation.
+
+install is via `pip install datarobot-predict`.  Check it out on [pypi](https://pypi.org/project/datarobot-predict/)
+
 # DataRobot Codegen Python Wrapper
 
 __NOT OFFICIALLY SUPPORTED__
